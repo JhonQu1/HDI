@@ -1,0 +1,165 @@
+
+
+
+html {
+    font-size: 16px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+
+
+.formularito{
+    width: calc(50% - 10px) !important;
+    height:fit-content !important;
+    border: #6D6D6D;
+    border-bottom: 1px solid #e3e3e3;
+    display: block;
+    padding: 8px 5px;
+    text-align: center;
+    text-decoration: none;
+    background: #FFF;
+    float: left;
+    cursor: pointer;
+    color: cornflowerblue;
+    font-weight: bolder;
+    margin-left:20%;
+}
+
+.modalito {
+    width:  max-content  /* calc(90% - 40px)*/ !important;
+    height: inherit !important;
+    border: none;
+    border-bottom: 1px solid #e3e3e3;
+    display: block;
+    padding: 8px 5px;
+    text-align: left;
+    text-decoration: none;
+    background: #FFF;
+    float: left;
+    cursor: pointer;
+    color: #5d5d5d;
+    font-weight: bold;
+    margin-left: 20%;
+}
+
+
+
+.codigoOTP {
+    position: initial;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    background: #FFFFFF;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+}
+
+
+
+    
+
+    .codigoOTP span {
+        color: #6D6D6D;
+    }
+
+
+
+    .codigoOTP button:active {
+        box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    }
+
+
+.hola {
+    width: calc(60% - 20px) !important;
+    height: fit-content !important;
+    border: #6D6D6D;
+    border-bottom: 1px solid #e3e3e3;
+    display: block;
+    padding: 8px 5px;
+    margin-left: 20%;
+}
+
+.BotonGenerar {
+    margin-left: 30%;
+}
+
+
+.hola p {
+    font-size: medium;
+    font-weight: 100;
+    color: cornflowerblue;
+    font-weight: bold;
+}
+
+
+.vamos{
+    margin-left: 0%;
+}
+
+
+.LetraSelect1 {
+    font-size: medium;
+    font-weight: 100;
+    color: dimgray;
+    font-weight: lighter;
+}
+
+.LetraSelect2 {
+    font-size: medium;
+    font-weight: 100;
+    color: dimgray;
+    font-weight: lighter;
+}
+
+
+
+
+.parrafo {
+    font-size: larger;
+    font-weight: 100;
+    color: black;
+    font-weight: normal
+}
+
+
+
+.LetraSelect3 {
+    font-size: medium;
+    font-weight: 100;
+    color: dimgray;
+    font-weight: lighter;
+}
+
+
+.Digitos {
+    width: calc(110% - 80px) !important;
+    height: fit-content !important;
+    text-align: center;    
+    margin-left: 0%;
+}
+
+.Aviso {
+    font-size:medium;
+    color: red;
+}
