@@ -1,0 +1,305 @@
+﻿@page
+
+@model  HDI4.Controllers.CertificadoController  
+
+
+@{
+  ViewData["Title"] = "Home page";
+  //Codigo Jsvascript de bootstrap para activar la modal
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" >
+ //Codigo Jsvascript de bootstrap para activar la modal
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" >
+
+<link rel="stylesheet" href="../css/site.css" >
+<link rel="stylesheet" href="~/css/bootstrap.css" />
+//<style type="text/css" >
+}
+
+
+
+
+<div class="text-center">
+    <h1 class="display-4">Certificados</h1>
+   @* <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>*@
+    <div class="w400 m-auto">
+
+        <p class="parrafo">Genera tus certificados de retención en la fuente, retención de IVA y retención de ICA de forma fácil y automática con nuestra plataforma. Si tienes dudas consulta el manual para conocer el paso a paso del proceso.</p>
+    </div>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    
+    <div class="box-around w600 m-auto box-intermediarios">
+        <div class="formularito" >
+            <form action="#">
+                <label for="siu" class="label light-blue">Tipo de Certificación:</label>
+                <br />
+                <br />
+                <select class="LetraSelect1 form-control form-control-sm" class="form-select" aria-label="" name="Menu" id="siu">
+                    <option value="Seleccionar">Seleccionar</option>
+                    <option value="Certificacion">Certificación 1</option>
+                    <option value="Documentoo">Certificación 2</option>
+                </select>
+                <br />
+
+                <label class="label light-blue">Tipo de Documento:</label>
+                <br />
+                <br />
+                <select class="LetraSelect2 form-control form-control-sm" class="form-select" aria-label="" name="Menu" id="lang">
+                    <option value="Seleccionar">Seleccionar</option>
+                    <option value="Certificacion">Cédula de ciudadanía</option>
+                    <option value="Documentoo">Cédula de Extranjería</option>
+                    <option value="Documentoo">NIT</option>
+                </select>
+                <br />
+                <input id="numeroDocumento" type="text" size="14" name="documento" placeholder="Número Documento" />
+                <input class="generar" type="submit" value="Generar Certificado" />
+            </form>
+            <br />
+        </div>
+       
+        
+        <br />
+        <br />
+
+
+
+
+
+        <div class="modalito">
+              <!-- Button trigger modal -->
+            <button type="button" class=" boton btn btn-dark " data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <label>Genera tu Código</label>
+            </button>
+
+            <!-- Modal -->
+            <div class=" vamos modal fade modal-md" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+
+
+                        <div class="modal-body ">
+
+
+
+                            <br>
+
+
+                            <form action="#">
+                                <label for="siu" class="label light-blue">Dónde quieres recibir el código?</label>
+                                <br />
+                                <br />
+                               
+                                <select class="LetraSelect3 form-control form-control-sm " class="form-select" aria-label="" name="Menu" id="siu " >
+                                    <option value="Seleccionar">Seleccionar</option>
+                                    <option value="Certificacion">Correo</option>
+                                    <option value="Documentoo">Celular</option>
+                                </select>
+                            </form>
+
+
+
+                            <br />
+                           
+                              
+                                <div class="hola codigoOTP">
+                                <p>Tu código es: <br />  <span></span></p>                               
+                               </div>
+                              
+                               <br />
+                               
+                               <div class="hijo">
+                                    
+                                    <button class=" BotonGenerar btn btn-success" onclick="generateOTP()">Generar</button>                                
+                                    <button class=" BotonReenviar btn btn-primary" onclick="">Reenviar</button>
+
+
+                                
+                          
+                            <br />
+
+
+
+
+                            <div class="formulario col-sm-12">
+                                <form method="post">
+                                    <label for="formGroupExampleInput" class="form-label">Correo:</label>
+                                    <input type="text" class="form-control" id="CorreoInput" placeholder="Ingresa tu Correo">
+                                </form>
+
+
+                                    @*Toma el valor introducido en el campo Correo*@
+                                    <script>
+                                        function Correo() {
+                                            var valor = document.getElementById("CorreoInput").value;
+                                            alert("Correo: " + valor);
+                                        }
+                                    </script>
+
+
+                            </div>
+                            
+                            <br>
+
+                            <div class="mb-3 col-sm-12">
+                                <label for="formGroupExampleInput2" class="form-label">Celular:</label>
+                                <input type="text" class="form-control" id="CelularInput" placeholder="Ingresa tu Celular">
+
+                                @*Toma el valor introducido en el campo Celular*@
+                               <script>
+                                    function Celular() {
+                                        var valor = document.getElementById("CelularInput").value;
+                                        alert("Celular: " + valor);
+                                    }
+                                </script>
+
+
+                            </div>
+
+                                    <script>
+                                        const numeroDocumento = document.getElementById("numeroDocumento")
+                                        const formulario = document.getElementById("")
+                                    </script>
+
+                        </div>
+                       
+
+
+                                 <div class="Digitos">
+
+                                      <form class=" formuDigitos">
+                                            <label for="" class="form-label">Ingrese el codigo de 6 dígitos enviado a su celular</label>
+
+                                            <div class="mb-3">
+
+                                                <input type="number" oninput="SoloUnDigito(this)" class="m-2" style="width:44px; height: 44px; text-align: center; font-size: 20px;">
+                                                <input type="number" oninput="SoloUnDigito(this)" class="m-2" style="width:44px; height: 44px; text-align: center; font-size: 20px;">
+                                                <input type="number" oninput="SoloUnDigito(this)" class="m-2" style="width:44px; height: 44px; text-align: center; font-size: 20px;">
+                                                                        -
+                                                <input type="number" oninput="SoloUnDigito(this)" class="m-2" style="width:44px; height: 44px; text-align: center; font-size: 20px;">
+                                                <input type="number" oninput="SoloUnDigito(this)" class="m-2" style="width:44px; height: 44px; text-align: center; font-size: 20px;">
+                                                <input type="number" oninput="SoloUnDigito(this)" class="m-2" style="width:44px; height: 44px; text-align: center; font-size: 20px;">
+                                                <div class="Aviso">Nunca revele sus datos y códigos a terceros.</div>
+
+                                            </div>
+                                              
+                                      </form>
+
+
+                                 </div>
+
+                                            @*Funcion que obliga a introducir un unico valor en las casillas*@
+                                            <script>
+                                                function SoloUnDigito(input) {
+                                                    if (input.value.length > 1) {
+                                                        input.value = input.value.slice(0, 1);
+                                                    }
+                                                }
+                                            </script>
+
+
+
+
+
+                        
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                <button type="button" class="btn btn-primary" onclick="">Enviar</button>
+
+                               @* <div class="hola codigoOTP">
+                                    <p>El Celular es: <br />  <span id="mostrarCelular" onclick="Celular()"> mostrar</span></p>
+                                </div>
+
+                            </div>*@
+
+                            
+                            <script>
+                                 
+                                function MostrarAmbos(){
+                                    const resultado1 = Celular();
+                                    const resultado2 = Correo();
+                                    alert("Datos enviados a: " + resultado1 "\n"+ resultado2 )
+                                }
+
+                            </script>
+
+                                
+
+                              
+                        
+                        </div>
+
+                       
+
+
+                      
+                    </div>
+                </div>
+            
+            </div>
+           
+          
+       
+        
+        
+        </div>
+
+
+        </div>
+
+
+
+                     
+
+
+                      
+
+
+
+
+
+
+
+                            @* Codigo de Bootstrap para activar Modal*@
+                            <Script>
+                                var myModal = document.getElementById('myModal')
+                                var myInput = document.getElementById('myInput')
+
+                                myModal.addEventListener('shown.bs.modal', function () {
+                                    myInput.focus()
+                                })
+                            </Script>
+
+
+
+
+                            @*Genera el Codigo OTP*@
+                            <script>
+                                function generateOTP() {
+                                    var digits = "0123456789";
+                                    let OTP = '';
+
+                                    for (let i = 0; i < 6; i++) {
+                                        OTP += digits[Math.floor(Math.random() * 10)];
+
+                                    }
+                                    var span = document.querySelector('.codigoOTP span');
+                                    span.innerHTML = OTP;
+                                }
+                            </script>
+
+
+
+
+
+    </div>
+</div>
+
+
